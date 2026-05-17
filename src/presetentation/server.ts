@@ -28,6 +28,10 @@ export class Server {
 
     async start() {
       
+        ///* Middleware para parsear JSON en las solicitudes entrantes (application/json)
+        this.app.use(express.json());   
+         //* Middleware para parsear datos de formularios (x-www-form-urlencoded    )
+        this.app.use(express.urlencoded({ extended: true }));
         //* Middleware para servir archivos estáticos desde la carpeta "public"
         this.app.use(express.static(this.public_Path));
         
