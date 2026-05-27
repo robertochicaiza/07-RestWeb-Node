@@ -103,6 +103,7 @@ export class TodosController {
             return;
         }   
         todos.splice(index, 1);
+        
         res.status(204).send();
     };
 }
